@@ -43,7 +43,10 @@ const EmployeeDetails = () => {
       localStorage.setItem("employees", JSON.stringify(updatedEmployees))
     } else {
       setEmployees([...employees, formData])
-      localStorage.setItem("employees", JSON.stringify(employees))
+      localStorage.setItem(
+        "employees",
+        JSON.stringify([...employees, formData])
+      )
     }
     setFormData({
       name: "",
